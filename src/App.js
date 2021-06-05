@@ -25,9 +25,17 @@ const App = () => {
     },
   ];
 
+  //We execute this function in the NewExpenses.js file and get the expenseData value from there
+  const addExpenseHandler = (expense) => {
+    const expenseData = {
+      ...expense,
+    };
+    console.log(expenseData);
+  };
+
   return (
     <div>
-      <NewExpenses />
+      <NewExpenses onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
